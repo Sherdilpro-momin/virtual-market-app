@@ -1,0 +1,23 @@
+{
+  "database": {
+    "rules": "database.rule.json"
+  },
+  "firestore": {
+    "rules": "firestore.rule",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "dist/virtual-market-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
