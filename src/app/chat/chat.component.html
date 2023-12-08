@@ -1,0 +1,19 @@
+<div *ngIf="currentUserId.length>0">
+    <div *ngFor="let room of rooms">
+        <div (click)="selectRoom(room)">
+          {{ room.name }} - {{ room.address }}
+        </div>
+        <button *ngIf="!isCreator(room)" (click)="sendJoinRequest(room)">Join</button>
+        <button *ngIf="hasRoomRequest(room)" (click)="acceptJoinRequest(room)">Accept</button>
+      </div>
+      <input [(ngModel)]="newRoomName" placeholder="Enter room name...">
+      <input [(ngModel)]="newRoomAddress" placeholder="Enter room address...">
+      <button (click)="createRoom()">Create Room</button>
+      
+      <div *ngFor="let message of messages">
+        {{ message.message }}
+      </div>
+      <input [(ngModel)]="newMessage" placeholder="Type your message here...">
+      <button (click)="sendMessage()">Send</button>
+</div>
+  
