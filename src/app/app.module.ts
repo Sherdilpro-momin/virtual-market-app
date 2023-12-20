@@ -11,11 +11,13 @@ import { environment } from 'src/environments/environment';
 import { provideFirestore } from '@angular/fire/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { ChatComponent } from './chat/chat.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
-    AuthComponent, ChatComponent
+    AuthComponent, ChatComponent, ProfileComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,

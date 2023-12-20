@@ -5,20 +5,23 @@ import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-auth',
-  template: `
-    <div *ngIf="!authService.auth.currentUser; else signedIn">
-      <input [(ngModel)]="email" placeholder="Email" />
-      <input [(ngModel)]="password" type="password" placeholder="Password" />
-      <button (click)="signIn()">Sign In</button>
-      <button (click)="signUp()">Sign Up</button>
-      <button (click)="signInWithGoogle()">Sign In with Google</button>
-    </div>
-    <ng-template #signedIn>
-      <div>
-        <button (click)="signOut()">Sign Out</button>
-      </div>
-    </ng-template>
-  `,
+  // template: `
+  //   <div *ngIf="!authService.auth.currentUser; else signedIn">
+  //     <input [(ngModel)]="email" placeholder="Email" />
+  //     <input [(ngModel)]="password" type="password" placeholder="Password" />
+  //     <button (click)="signIn()">Sign In</button>
+  //     <button (click)="signUp()">Sign Up</button>
+  //     <button (click)="signInWithGoogle()">Sign In with Google</button>
+  //   </div>
+  //   <ng-template #signedIn>
+  //     <div>
+  //       <button (click)="signOut()">Sign Out</button>
+  //     </div>
+  //   </ng-template>
+  // `,
+
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
   email: string = '';
